@@ -1,5 +1,5 @@
 * {
-      font-family: "Poppins", sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
 }
 
 /* CSS Reset */
@@ -89,12 +89,12 @@ time,
 mark,
 audio,
 video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font: inherit;
-      vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -109,41 +109,41 @@ hgroup,
 menu,
 nav,
 section {
-      display: block;
+    display: block;
 }
 
 body {
-      line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-      list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-      quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-      content: '';
-      content: none;
+    content: '';
+    content: none;
 }
 
 table {
-      border-collapse: collapse;
-      border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Variables */
 :root {
-      --color-primary: #0a4695;
-      --color-primary-darker: #09346d;
-      --color-border: rgba(0, 0, 0, 0.151);
+    --color-primary: #0a4695;
+    --color-primary-darker: #09346d;
+    --color-border: rgba(0, 0, 0, 0.151);
 }
 
 /* Typography */
@@ -209,11 +209,14 @@ table {
     transition: all .3s ease-in-out;
     z-index: 1;
     opacity: 0%;
+    display: none;
 }
 
 .navbar-menu--active {
     top: 100% !important;
     opacity: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar-links {
@@ -239,6 +242,10 @@ table {
     color: var(--color-primary);
 }
 
+.navbar-logo-text {
+    display: none;
+}
+
 .text--primary {
     color: var(--color-primary);
 }
@@ -253,4 +260,83 @@ table {
     display: flex;
     flex-direction: column;
     row-gap: 42px;
+}
+
+
+@media screen and (min-width: 700px) {
+    body {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+
+    .navbar-logo-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+    }
+
+    .navbar-logo p:nth-child(1) {
+        font-size: 14px;
+        font-weight: 510;
+    }
+
+    .navbar-logo p:nth-child(2) {
+        font-size: 12px;
+    }
+
+    .navbar {
+        padding: 24px;
+        width: 100%;
+        max-width: 200px;
+        min-width: 200px;
+        position: sticky;
+        top: 0;
+        bottom: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-right: 1px solid var(--color-border);
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    .navbar-logo img {
+        height: 32px;
+    }
+
+    .navbar-menu {
+        position: static;
+        opacity: 100%;
+        transition: none;
+        border: none;
+        row-gap: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-links {
+        border: none;
+        padding: 4px 12px;
+        font-size: 11px;
+    }
+    
+
+    .navbar-links--active {
+        background-color: #d0e1fb;
+        border-radius: 12px;
+    }
+
+    .navbar-links--active p, .navbar-links--active svg {
+        fill: var(--color-primary);
+        color: var(--color-primary);
+        font-weight: 510;
+    }
 }

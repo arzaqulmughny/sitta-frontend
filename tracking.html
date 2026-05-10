@@ -91,7 +91,7 @@
             <p class="header-subtitle">Lacak status pengiriman dokumen dan paket akademik.</p>
         </div>
 
-        <section class="input-waybill-section">
+        <form class="input-waybill-section" onsubmit="onSubmitSearch(event)">
             <label class="input-waybill">
                 <p class="input-waybill-label">Cari Berdasarkan Nomor Resi atau DO</p>
                 <div class="input-waybill-inner">
@@ -100,7 +100,7 @@
                         <path
                             d="M155-195q-35-35-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35q-50 0-85-35Zm113.5-56.5Q280-263 280-280t-11.5-28.5Q257-320 240-320t-28.5 11.5Q200-297 200-280t11.5 28.5Q223-240 240-240t28.5-11.5ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm628.5 108.5Q760-263 760-280t-11.5-28.5Q737-320 720-320t-28.5 11.5Q680-297 680-280t11.5 28.5Q703-240 720-240t28.5-11.5ZM680-440h170l-90-120h-80v120ZM360-540Z" />
                     </svg>
-                    <input class="input-waybill-input" type="text" placeholder="DO-123123">
+                    <input class="input-waybill-input" type="text" placeholder="DO-123123" name="input-waybill-input">
                 </div>
             </label>
 
@@ -112,9 +112,9 @@
                 </svg>
                 <p>Cari</p>
             </button>
-        </section>
+        </form>
 
-        <div class="cols-2">
+        <div class="cols-2" id="result" style="display: none;">
             <section class="result-section">
                 <div class="result-header">
                     <div class="result-header__left">
@@ -234,6 +234,7 @@
     </main>
 
     <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/tracking.js"></script>
 </body>
 
 </html>

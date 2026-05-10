@@ -269,6 +269,10 @@ table {
         display: flex;
     }
 
+    .main {
+        width: 100%;
+    }
+
     .navbar-toggle {
         display: none;
     }

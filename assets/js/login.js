@@ -11,11 +11,18 @@ const users = [
     }
 ];
 
-// Check user session
-const currentUser = sessionStorage.getItem('user_id');
-if (currentUser) {
-    window.location.href = '/index.html'
+document.addEventListener('DOMContentLoaded', () => {
+    checkUserSession();
+});
+
+const checkUserSession = () => {
+    // Check user session
+    const currentUser = sessionStorage.getItem('user_id') || localStorage.getItem('user_id');
+    if (currentUser) {
+        window.location.href = '/index.html'
+    }
 }
+
 
 const onSubmitLogin = (event) => {
     event.preventDefault();
@@ -64,8 +71,12 @@ const onSubmitLogin = (event) => {
         return;
     }
 
-    // Preserve session
-    sessionStorage.setItem('user_id', existingEmail.id);
+    if (form.remember) {
+        localStorage.setItem('user_id', existingEmail.id)
+    } else {
+        // Preserve session
+        sessionStorage.setItem('user_id', existingEmail.id);
+    }
 
     window.location.href = '/index.html';
 }

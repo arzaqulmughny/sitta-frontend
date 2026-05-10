@@ -9,7 +9,7 @@ const onSubmitSearch = (event) => {
     }
 
     if (value === 'DO-123123') {
-        document.getElementById('result').style.display = 'flex';
+        document.getElementById('result').style.display = 'grid';
     } else {
         alert('Data tidak ditemukan')
     }

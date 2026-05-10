@@ -169,7 +169,6 @@ table {
     top: 0;
     left: 0;
     background-color: white;
-    height: 100vh;
 }
 
 .navbar-logo img {
@@ -257,7 +256,6 @@ table {
 
 /* Layout */
 .main {
-    width: 100%;
     padding: 32px 24px;
     overflow: auto;
     display: flex;
@@ -298,9 +296,8 @@ table {
 
     .navbar {
         padding: 24px;
+        max-width: 185px;
         width: 100%;
-        max-width: 200px;
-        min-width: 200px;
         position: sticky;
         top: 0;
         bottom: 0;
@@ -309,6 +306,7 @@ table {
         border-right: 1px solid var(--color-border);
         flex-direction: column;
         row-gap: 24px;
+        height: 100vh;
     }
 
     .navbar-logo img {

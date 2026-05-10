@@ -213,9 +213,10 @@ body {
 .cols-2 {
     display: grid;
     gap: 24px;
+    grid-template-columns: 1fr;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
     .cols-2 {
         grid-template-columns: 2fr 1fr;
     }
